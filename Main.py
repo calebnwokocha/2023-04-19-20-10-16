@@ -53,7 +53,7 @@ if __name__ == "__main__":
 
 
     # Uncomment the code below to see the two nodes preformance on prime number dataset.
-    
+    """
     # Create input and target datasets for the first 100 prime numbers
     inputs = [float(i) for i in range(1, 101)]
     targets = [float(num) for num in range(2, 547) if isPrime(num)][:100]
@@ -93,7 +93,7 @@ if __name__ == "__main__":
     print(f"Node 2: Mean Squared Error = {mse2}")
     print()
     print("TESTING COMPLETE")
-    
+    """
 
 def isPrime(num):
     if num < 2:
