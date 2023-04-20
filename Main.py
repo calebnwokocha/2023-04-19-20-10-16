@@ -10,7 +10,7 @@ if __name__ == "__main__":
     node1 = Node1(random)
     node2 = Node2(random)
     
-    # To train the two node for predciting square numbers
+    # To train the two nodes for predicting square numbers
     # Create input and target datasets for the first 100 square numbers
     inputs = [float(i) for i in range(1, 101)]
     targets = [float(math.pow(num, 2)) for num in range(1, 10000)][:100]
