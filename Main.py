@@ -34,7 +34,7 @@ if __name__ == "__main__":
 
     # Train nodes on input and target datasets
     print("TRAINING NODES...")
-    for j in range(100000):
+    for epoch in range(100000):
         for i in range(100):
             node1.train([inputs[i-1]], [targets[i-1]], 0.000001)
             node2.train([inputs[i-1]], [targets[i-1]], 0.000001)
@@ -77,7 +77,7 @@ if __name__ == "__main__":
     
     # Train nodes on input and target datasets
     print("TRAINING NODES...")
-    for j in range(100000):
+    for epoch in range(100000):
         for i in range(100):
             node1.train([inputs[i-1]], [targets[i-1]], 0.000001)
             node2.train([inputs[i-1]], [targets[i-1]], 0.000001)
