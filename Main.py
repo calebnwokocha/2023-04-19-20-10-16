@@ -4,21 +4,13 @@ from Random import Random
 from Node1 import Node1
 from Node2 import Node2
 
-def isPrime(num):
-    if num < 2:
-        return False
-    for i in range(2, int(num**0.5)+1):
-        if num % i == 0:
-            return False
-    return True
-
-
 if __name__ == "__main__":
     # Initialize random number generator and nodes
     random = Random()
     node1 = Node1(random)
     node2 = Node2(random)
-
+    
+    # To train the two node for predciting square numbers
     # Create input and target datasets for the first 100 square numbers
     inputs = [float(i) for i in range(1, 101)]
     targets = [float(math.pow(num, 2)) for num in range(1, 10000)][:100]
@@ -61,7 +53,7 @@ if __name__ == "__main__":
 
 
     # Uncomment the code below to see the two nodes preformance on prime number dataset.
-    """
+    
     # Create input and target datasets for the first 100 prime numbers
     inputs = [float(i) for i in range(1, 101)]
     targets = [float(num) for num in range(2, 547) if isPrime(num)][:100]
@@ -101,5 +93,12 @@ if __name__ == "__main__":
     print(f"Node 2: Mean Squared Error = {mse2}")
     print()
     print("TESTING COMPLETE")
-    """
+    
 
+def isPrime(num):
+    if num < 2:
+        return False
+    for i in range(2, int(num**0.5)+1):
+        if num % i == 0:
+            return False
+    return True
