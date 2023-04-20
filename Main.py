@@ -61,7 +61,7 @@ if __name__ == "__main__":
 
     # Print input and target datasets
     print()
-    print("DATASET:")
+    print("TRAINING DATASET:")
     print()
     print("Input -> Target")
     for i in range(100):
@@ -96,19 +96,19 @@ if __name__ == "__main__":
     
 
     # Uncomment the code below to see the two nodes preformance on prime number prediction test.
-    """
+
     # To train the two nodes for predicting prime numbers
     # Create input and target datasets for the first 100 prime numbers
-    training_inputs = [float(i) for i in range(1, 101)]
+    training_inputs = [float(index) for index in range(1, 101)]
     training_targets = [float(num) for num in range(2, 547) if isPrime(num)][:100]
 
     # Create input and target datasets for the next 100 prime numbers
-    testing_inputs = [float(i) for i in range(101, 201)]
+    testing_inputs = [float(index) for index in range(101, 201)]
     testing_targets = [float(num) for num in range(547, 1231) if isPrime(num)][:100]
     
     # Print input and target datasets
     print()
-    print("DATASET:")
+    print("TRAINING DATASET:")
     print()
     print("Input -> Target")
     for i in range(100):
@@ -140,4 +140,4 @@ if __name__ == "__main__":
     print(f"Node 2: Mean Squared Error = {mse2}")
     print()
     print("TESTING COMPLETE")
-    """
+    
