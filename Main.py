@@ -96,7 +96,7 @@ if __name__ == "__main__":
     
 
     # Uncomment the code below to see the two nodes preformance on prime number prediction test.
-
+    """
     # To train the two nodes for predicting prime numbers
     # Create input and target datasets for the first 100 prime numbers
     training_inputs = [float(index) for index in range(1, 101)]
@@ -140,4 +140,4 @@ if __name__ == "__main__":
     print(f"Node 2: Mean Squared Error = {mse2}")
     print()
     print("TESTING COMPLETE")
-    
+    """
