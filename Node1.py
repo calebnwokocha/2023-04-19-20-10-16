@@ -1,3 +1,8 @@
+"""
+Author: Caleb Princewill Nwokocha
+Website: https://calebnwokocha.github.io/profile/
+"""
+
 import math
 
 class Node1:
