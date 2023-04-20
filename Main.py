@@ -7,22 +7,27 @@ The purpose of this program is to compare two activation functions:
     (2) y = [(w1 * x) / (w1 + (w2 * x))] * x
 where w <=> weight, b <=> bias, w1 <=> weight1, w2 = weight2, x <=> input, and y <=> output.
 
-Two nodes are created, one for each activation function. Node1 uses activation function (1) and Node2 uses activation function (2).
+Two nodes are created, one for each activation function. 
+Node1 uses activation function (1) and Node2 uses activation function (2).
 
-A global Random object is created to generate the same random numbers for the weights and biases of the two nodes, so that 
-Node1 weight is the same as weight1 of Node2, and Node1 bias is the same as weight2 of Node2.
+A global Random object is created to generate the same random numbers for 
+the weights and biases of the two nodes, so that Node1 weight is the same as 
+weight1 of Node2, and Node1 bias is the same as weight2 of Node2.
 
 The two nodes are trained and tested on two tasks:
     (1) Predicting the square of a number
     (2) Predicting the prime number
 
-For the first task, the two nodes are trained to predict the square of 1 to 100. Then, they are tested to predict the square of 101 to 200. 
+For the first task, the two nodes are trained to predict the square of 1 to 100. 
+Then, they are tested to predict the square of 101 to 200. 
 
-For the second task, the two nodes are trained to predict prime numbers of index 1 to 100. Then, they are tested to predict prime numbers of index 101 to 200. 
+For the second task, the two nodes are trained to predict prime numbers of index 1 to 100.
+Then, they are tested to predict prime numbers of index 101 to 200. 
 
 The mean squared error is calculated for each node and shown after testing.
 
-I recommend you run this program multiple times to see the average difference in the mean squared error of the two nodes.
+For yet unknown reasons, Node2 may decide not to learn sometimes, so I recommend you run this 
+program multiple times to see difference in the mean squared error of the two nodes.
 """
 
 import math
@@ -48,11 +53,11 @@ if __name__ == "__main__":
     # To train the two nodes for predicting square numbers
     # Create input and target datasets for the first 100 square numbers
     training_inputs = [float(i) for i in range(1, 101)]
-    training_targets = [float(math.pow(num, 2)) for num in range(1, 10000)][:100]
+    training_targets = [float(math.pow(num, 2)) for num in range(1, 101)][:100]
 
     # Create input and target datasets for the next 100 square numbers
     testing_inputs = [float(i) for i in range(101, 201)]
-    testing_targets = [float(math.pow(num, 2)) for num in range(10201, 40401)][:100]
+    testing_targets = [float(math.pow(num, 2)) for num in range(101, 201)][:100]
 
     # Print input and target datasets
     print()
@@ -65,10 +70,9 @@ if __name__ == "__main__":
 
     # Train nodes on input and target datasets
     print("TRAINING NODES...")
-    for epoch in range(1000000):
-        for i in range(100):
-            node1.train([training_inputs[i-1]], [training_targets[i-1]], 0.000001)
-            node2.train([training_inputs[i-1]], [training_targets[i-1]], 0.000001)
+    for epoch in range(100000):
+        node1.train(training_inputs, training_targets, 0.000000001)
+        node2.train(training_inputs, training_targets, 0.000000001)
     print()
     print("TRAINING COMPLETE")
 
@@ -113,10 +117,9 @@ if __name__ == "__main__":
     
     # Train nodes on input and target datasets
     print("TRAINING NODES...")
-    for epoch in range(1000000):
-        for i in range(100):
-            node1.train([training_inputs[i-1]], [training_targets[i-1]], 0.000001)
-            node2.train([training_inputs[i-1]], [training_targets[i-1]], 0.000001)
+    for epoch in range(100000):
+        node1.train(training_inputs, training_targets, 0.000000001)
+        node2.train(training_inputs, training_targets, 0.000000001)
     print()
     print("TRAINING COMPLETE")
 
