@@ -27,15 +27,17 @@ Then, they are tested to predict prime numbers of index 101 to 200.
 The mean squared error is calculated for each node and shown after testing.
 
 Update 1:
-    For yet unknown reasons, Node2 may decide not to learn sometimes, so I recommend you run this 
-    program multiple times to see difference in the mean squared error of the two nodes.
+    For yet unknown reasons, Node2 may decide not to learn sometimes, so I recommend you 
+    run this program multiple times to see difference in the mean squared error of the 
+    two nodes.
 
 Update 2:
-    A reason have been found. Node2 is not learning because the initial weight1 and weight2 values.
-    If weight1 is set to 0.3028543801165525 and weight2 is set 0.8701482055747214, then Node2 
-    will learn. For this reason, I have changed the initial weight1 and weight2 values to 
-    0.3028543801165525 and 0.8701482055747214 respectively (See the changes at Random.py). 
-    Node1 weight is now set to 0.3028543801165525 and its bias is set to 0.8701482055747214.
+    A reason is now known. Node2 is not learning because of the initial weight1 and weight2 
+    values. If weight1 is initially set to 0.3028543801165525 and weight2 is initially set 
+    0.8701482055747214, then Node2 will learn. For this reason, I have changed the initial 
+    weight1 and weight2 values to 0.3028543801165525 and 0.8701482055747214 respectively 
+    (See the changes at Random.py). Also, Node1 weight is now initially set to 0.3028543801165525 
+    and its bias is initially set to 0.8701482055747214.
 """
 
 import math
