@@ -11,7 +11,7 @@ class Node2:
         self.w2 = random.getNum2()
 
     def activate(self, x):
-        return (self.w1 * x) / (self.w1 + (self.w2 * x)) * x
+        return ((self.w1 * x) / (self.w1 + (self.w2 * x))) * x
 
     def train(self, inputs, targets, learningRate):
         for i in range(len(inputs)):
